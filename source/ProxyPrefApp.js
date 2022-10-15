@@ -81,10 +81,10 @@ enyo.kind({
 
 
 		{kind: "AppMenu", components: [
+			{caption: $L("About"), onclick: "showAbout"},
 			{caption: $L("Reset"), onclick: "resetToDefaults"},
-			{kind: "HelpMenu", target: "http://www.webosarchive.org/proxy"}
+			{caption: $L("Help"), onclick: "showHelp"}
 		]},
-
 		{
             kind: "Dialog",
             name: "alert",
@@ -136,17 +136,23 @@ enyo.kind({
 	},
 
 	handleLaunchParam: function () {
-		/*
-		if (undefined !== enyo.windowParams.target &&
-				undefined !== enyo.windowParams.target.ssid &&
-				undefined !== enyo.windowParams.target.securityType) {
-			if ("ipFailed" === enyo.windowParams.target.connectState ||
-					"ipConfigured" === enyo.windowParams.target.connectState) {
-				this.$.wifiPrefConfig.retrieveIpInfo(enyo.windowParams.target);
-			} else {
-				this.$.wifiPrefConfig.showJoinSecureNetwork(enyo.windowParams.target);
-			}
-		}*/
+		enyo.log("ProxySet Launch params: " + JSON.stringify(enyo.windowParams));
+	},
+
+	showAbout: function() {
+		var aboutMsg = "<div style='padding-bottom:12px;margin:auto 8px'>" + enyo.fetchAppInfo().title + " " + enyo.fetchAppInfo().version;
+		if (enyo.fetchAppInfo().copyright)
+			aboutMsg += " - " + enyo.fetchAppInfo().copyright;
+		else
+			aboutMsg += " by " + enyo.fetchAppInfo().vendor
+		if (enyo.fetchAppInfo().ossRepo)
+			aboutMsg += ". Source code and license available at:<br>" + enyo.fetchAppInfo().ossRepo;
+		aboutMsg += "</div>";
+		this.$.alertMsg.setContent(aboutMsg);
+        this.$.alert.open();
+	},
+	showHelp: function() {
+		this.$.launchAppRequest.call({"id": "com.palm.app.browser", "params":{"target": "http://www.webosarchive.com/proxy"}});
 	},
 
 	setToggleProxy: function() {
