@@ -102,7 +102,7 @@ enyo.kind({
             name: "prompt",
             lazy: false,
 			title: "Already Installed",
-			message: "The certificate was previously installed. Do you want to launch the Certificates app to delete or manage it?",
+			message: "The certificate was previously installed. Do you want to launch the Certificates app to delete or manage the existing certificate?",
 			acceptButtonCaption: "Yes",
 			cancelButtonCaption: "No",
 			onAccept: "manageCertificates",
