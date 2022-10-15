@@ -1,0 +1,56 @@
+/* TODO: put your application-specific CSS here */
+.header-icon {
+    width: 40px;
+	height: 48px;
+}
+.bigIcon {
+	width: 54px !important;
+    margin-left: -55px !important;
+	height: 48px;
+	background: url(../images/header-icon-proxy.png);
+}
+.smallIcon {
+	width: 40px;
+	height: 48px;
+	background: url(../images/header-icon-proxy-s.png);
+}
+
+.headerTitle {
+    padding-left:10px;
+}
+.headerTitleTouchpad {
+    padding-left: 17px !important;
+}
+
+.box-center {
+    max-width:500px;
+    margin:0px auto 0;
+}
+
+.footnote-text {
+	font-size:16px;
+	color:#666;
+	margin: -2px 5px 16px 10px;
+}
+
+.touchpad-margin {
+    margin-top: 23px;
+}
+
+.wifi-header-shadow,
+.wifi-footer-shadow {
+	position: absolute; 
+	z-index: 100;
+	height: 3px;
+	width: 100%;
+	pointer-events: none;
+}
+.wifi-header-shadow {
+	top: 54px;
+	background:transparent url('../images/light_chrome_drop_shadow_header.png') bottom repeat-x;
+}
+.wifi-footer-shadow {
+	bottom: 0;
+	height: 57px; 
+	background:transparent url('../images/light_chrome_drop_shadow_footer.png') top repeat-x;
+}
