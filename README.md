@@ -4,7 +4,7 @@
 
 Proxy control panel for legacy webOS devices.
 
-Tested on Pre, Pre2, Veer and Touchpad. Now with Just Type search capability!
+Tested on Pre, Pre2, Veer and Touchpad.
 
 Learn more about this app at: [http://www.webosarchive.org/docs/proxysetup](http://www.webosarchive.org/docs/proxysetup)
 
