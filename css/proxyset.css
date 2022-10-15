@@ -1,6 +1,6 @@
 /* TODO: put your application-specific CSS here */
 .header-icon {
-    width: 40px;
+    width: 54px;
 	height: 48px;
 }
 .bigIcon {
@@ -10,16 +10,16 @@
 	background: url(../images/header-icon-proxy.png);
 }
 .smallIcon {
-	width: 40px;
+	width: 54px !important;
 	height: 48px;
 	background: url(../images/header-icon-proxy-s.png);
 }
 
 .headerTitle {
-    padding-left:10px;
+    padding-left:14px;
 }
 .headerTitleTouchpad {
-    padding-left: 17px !important;
+    padding-left: 3px !important;
 }
 
 .box-center {

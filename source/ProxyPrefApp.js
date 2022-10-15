@@ -28,7 +28,7 @@ enyo.kind({
 		{className:"wifi-header-shadow"},
 		{className:"touchpad-margin", name: "tpmargin"},
 		
-		{kind: "Scroller", flex: 1, className: "box-center", components: [
+		{kind: "Scroller", flex: 1, className: "box-center", name: "mainscroller", components: [
 			{kind: "RowGroup", caption: "Encryption", components: [
 				{kind: "Item", align: "center", tapHighlight: false, layoutKind: "HFlexLayout", components: [
 						{flex:1, content: $L("Install Certificate")},
@@ -122,6 +122,7 @@ enyo.kind({
 			this.$.spacerPhone.show();
 			this.$.headerIcon.addClass("smallIcon");
 			this.$.tpmargin.hide();
+			this.$.mainscroller.addClass("phone");
 		} else {
 			this.$.headerIcon.addClass("bigIcon");
 			this.$.headerTitle.addClass("headerTitleTouchpad")
