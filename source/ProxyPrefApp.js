@@ -78,6 +78,10 @@ enyo.kind({
 			},
 			{name:"txtAccountInfo", className: "footnote-text", srcId:"certContent", content:"If you need an account, visit http://www.webosarchive.org/proxy on a modern computer to sign up!"},
 		]},
+		{
+            kind: "Helpers.Updater", //Make sure the Updater Helper is included in your depends.json
+            name: "myUpdater"
+        },
 
 
 		{kind: "AppMenu", components: [
@@ -127,6 +131,7 @@ enyo.kind({
 			this.$.headerIcon.addClass("bigIcon");
 			this.$.headerTitle.addClass("headerTitleTouchpad")
 		}
+		this.$.myUpdater.CheckForUpdate("webOS Archive Proxy");
 	},
 
 	handleActivate: function () {
