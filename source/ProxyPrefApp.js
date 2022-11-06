@@ -250,7 +250,11 @@ enyo.kind({
         var port = this.$.proxyPort.getValue();
         var username = this.$.proxyUserName.getValue();
         var password = this.$.proxyPassword.getValue();
-		var useServer = username + ":" + password + "@" + server;
+		var useServer = server;
+		if (password && password != "")
+			useServer = password + "@" + server;
+		if (username && username != "")
+			useServer = username + ":" + useServer;
 
 		var proxyArgs = '{"action":"add","proxyInfo":{"proxyConfigType":"manualProxy","networkTechnology":"default","proxyScope":"default","isSecureProxy":true,"proxyPort":' + port + ',"proxyServer":"' + useServer + '"}}';
         enyo.log("On: configureNWProxiesCall.call(" + proxyArgs + ")");
